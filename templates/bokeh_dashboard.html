@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bokeh Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .bk-root {
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-3.0.3.min.css" type="text/css">
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.0.3.min.js"></script>
+</head>
+<body>
+    <h1>Interactive Bokeh Dashboard</h1>
+    <div>
+        {{ bokeh_script|safe }}
+        {{ bokeh_div|safe }}
+    </div>
+</body>
+</html>

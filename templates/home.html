@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Головна сторінка</h1>
+<div class="d-flex flex-wrap justify-content-center">
+    <a href="{% url 'get_all_students' %}" class="btn btn-primary me-3 mb-2">Список студентів</a>
+    <a href="{% url 'get_all_teachers' %}" class="btn btn-success me-3 mb-2">Список викладачів</a>
+    <a href="{% url 'get_all_time_schedules' %}" class="btn btn-light me-3 mb-2">Розклад</a>
+    <a href="{% url 'dashboard' %}" class="btn btn-outline-success me-3 mb-2">Plotly Дашборд</a>
+    <a href="{% url 'bokeh_dashboard' %}" class="btn btn-outline-info me-3 mb-2">Bokeh Дашборд</a>
+</div>
+{% endblock %}

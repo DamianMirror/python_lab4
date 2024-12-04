@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Деталі викладача{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Деталі викладача</h1>
+<div class="card mb-4">
+    <div class="card-body">
+        <p class="card-text"><strong>Ім'я:</strong> {{ teacher.user.name }}</p>
+        <p class="card-text"><strong>Прізвище:</strong> {{ teacher.user.surname }}</p>
+        <p class="card-text"><strong>Email:</strong> {{ teacher.user.email }}</p>
+        <p class="card-text"><strong>Зарплата:</strong> {{ teacher.salary }} грн</p>
+    </div>
+</div>
+
+<h2 class="text-center">Предмети, які викладає</h2>
+<ul class="list-group">
+    {% for subject in subjects %}
+        <li class="list-group-item">{{ subject.name }} ({{ subject.credits }} кредити)</li>
+    {% empty %}
+        <li class="list-group-item text-danger">Цей викладач не викладає жодного предмету.</li>
+    {% endfor %}
+</ul>
+<div class="mt-4">
+    <a href="{% url 'get_all_teachers' %}" class="btn btn-secondary">Назад до списку викладачів</a>
+</div>
+{% endblock %}

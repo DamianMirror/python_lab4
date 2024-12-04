@@ -1,0 +1,17 @@
+{% extends 'base_list.html' %}
+
+{% block title %}Список викладачів{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Список викладачів</h1>
+<div class="list-group">
+    {% for teacher in teachers %}
+        <a href="{% url 'get_teacher_by_id' teacher.user.id %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>{{ teacher.user.name }} {{ teacher.user.surname }}</span>
+                <span class="badge bg-success">Зарплата: {{ teacher.salary }} грн</span>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

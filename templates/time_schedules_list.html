@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Розклад занять{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Розклад занять</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Номер уроку</th>
+                <th scope="col">Початок</th>
+                <th scope="col">Кінець</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for schedule in schedules %}
+                <tr>
+                    <td>{{ schedule.lesson_number }}</td>
+                    <td>{{ schedule.start_time }}</td>
+                    <td>{{ schedule.end_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">На головну</a>
+</div>
+{% endblock %}

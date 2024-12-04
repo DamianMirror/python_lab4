@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Деталі студента{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Деталі студента</h1>
+<div class="card">
+    <div class="card-body">
+        <p class="card-text"><strong>Ім'я:</strong> {{ student.user.name }}</p>
+        <p class="card-text"><strong>Прізвище:</strong> {{ student.user.surname }}</p>
+        <p class="card-text"><strong>Email:</strong> {{ student.user.email }}</p>
+        <p class="card-text"><strong>Група:</strong> {{ student.group.name }}</p>
+    </div>
+</div>
+<div class="mt-4">
+    <a href="{% url 'get_all_students' %}" class="btn btn-secondary">Назад до списку студентів</a>
+</div>
+{% endblock %}

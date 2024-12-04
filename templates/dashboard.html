@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load plotly_dash %}
+<html>
+<head>
+    <title>Dashboards</title>
+    <style>
+        body div div{
+            padding-top: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Dashboards</h1>
+    <div>
+        {% plotly_app name="AverageMarkPerStudentPerSubject" %}
+    </div>
+    <div>
+        {% plotly_app name="AverageMarkPerTeacher" %}
+    </div>
+    <div>
+        {% plotly_app name="StudentCountPerGroup" %}
+    </div>
+    <div>
+        {% plotly_app name="StudentCountPerSubject" %}
+    </div>
+    <div>
+        {% plotly_app name="StudentCountPerTeacher" %}
+    </div>
+    <div>
+        {% plotly_app name="AverageMarkPerGroup" %}
+    </div>
+</body>
+</html>

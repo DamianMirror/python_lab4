@@ -1,0 +1,17 @@
+{% extends 'base_list.html' %}
+
+{% block title %}Список учнів{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Список учнів</h1>
+<div class="list-group">
+    {% for student in students %}
+        <a href="{% url 'get_student_by_id' student.user.id %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>{{ student.user.name }} {{ student.user.surname }}</span>
+                <span class="badge bg-primary">Група: {{ student.group.name }}</span>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}
